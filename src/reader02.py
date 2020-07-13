@@ -79,11 +79,11 @@ class analog_gauge:
             except:
                 pass
 
-            seconds = 90
-            count += self.fps * seconds
-            print(count)
-            self.video_test.set(1, count)
-            break
+            # seconds = 90
+            # count += self.fps * seconds
+            # print(count)
+            # self.video_test.set(1, count)
+            # break
             n -= 1
 
 
