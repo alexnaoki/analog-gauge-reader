@@ -33,10 +33,12 @@ class analog_gauge:
         print(self.rect_pts_BEFORE)
         n = 10
         count = 0
-
+        seconds = 90
         self.video_test = cv.VideoCapture(self.file)
         # success, image = self.video_test.read()
-        while n>0:
+        while count < n:
+            n_frame = int(count*self.fps*seconds)
+            frameId = self.video_test.get(n_frame)
             success, image = self.video_test.read()
 
             print(n)
@@ -84,7 +86,8 @@ class analog_gauge:
             # print(count)
             # self.video_test.set(1, count)
             # break
-            n -= 1
+            count += 1
+            # n -= 1
 
 
         # try:
