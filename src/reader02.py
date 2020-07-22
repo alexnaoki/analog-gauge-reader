@@ -85,18 +85,18 @@ class analog_gauge:
                             cx = int(M['m10']/M['m00'])
                             cy = int(M['m01']/M['m00'])
                             # print(cx, cy)
-                            cv.circle(clock_t, (cx, cy), 5, (0,0,0), -1)
+                            # cv.circle(clock_t, (cx, cy), 5, (0,0,0), -1)
                             index_far, far = self.most_distance_pts_from_contour(centroid=(70,70), pts=np.squeeze(contour))
                             x_angle = contour[index_far][0,0] - 70
                             y_angle = 70 - contour[index_far][0, 1]
                     #
-                            cv.circle(clock_t, (contour[index_far][0,0], contour[index_far][0,1]), 10, (255,255,255),10)
+                            # cv.circle(clock_t, (contour[index_far][0,0], contour[index_far][0,1]), 10, (255,255,255),10)
                     #
                         elif area > 4100:
                             cx = int(M['m10']/M['m00'])
                             cy = int(M['m01']/M['m00'])
                             # print(cx, cy)
-                            cv.circle(clock_eq, (cx, cy), 5, (255,0,0), -1)
+                            # cv.circle(clock_eq, (cx, cy), 5, (255,0,0), -1)
 
                             hull = cv.convexHull(contour, returnPoints=False)
                             defects = cv.convexityDefects(contour, hull)
@@ -110,7 +110,7 @@ class analog_gauge:
                             x_angle = teste[index_far][0,0] - 70
                             y_angle = 70 - teste[index_far][0,1]
 
-                            cv.circle(clock_eq, (teste[index_far][0,0], teste[index_far][0,1]), 10, (255,255,255), 10)
+                            # cv.circle(clock_eq, (teste[index_far][0,0], teste[index_far][0,1]), 10, (255,255,255), 10)
                         else:
                             pass
 
@@ -120,6 +120,7 @@ class analog_gauge:
 
                     cv.imshow('dfasdfasf', clock_t)
                     cv.imshow('eq', clock_eq)
+                    cv.imshow('noeq', clock)
                     # cv.imshow('clahe', clock_clahe)
                     # cv.imshow('dfadfs',clock_eq)
                     cv.waitKey(-1)
