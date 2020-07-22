@@ -1,4 +1,5 @@
 # Analog gauge reader
-The analog-gauge-reader is a program capable to read a video file and create a timeseries csv based on the video.
+I developed a Python application able to read analog gauges and to convert  a continuous signal to a discrete one.
+
 
 <img src="/imgs/opencv_hidrometro.gif"/>
